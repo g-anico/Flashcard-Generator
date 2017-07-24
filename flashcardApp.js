@@ -2,7 +2,6 @@ var SimpleCard = require("./BasicCard");
 var Cloze = require ("./ClozeCard");
 var inquirer = require ("inquirer");
 var fs = require ("fs");
-
 var cardArray = [];
 
 // ==========================================
@@ -18,29 +17,18 @@ function flashcards (){
 ])
 .then(function(choice){
   if(choice.userType === 'create-basic') {
-    readCards('log.txt');
+    // readCards('log.txt');
+
     createCards(basicPrompt,'log.txt');
   } else if (choice.userType === 'create-cloze') {
-    readCards('cloze-log.txt');
+    // readCards('cloze-log.txt');
     createCards(clozePrompt, 'cloze-log.txt');
   } else if (choice.userType === 'quit') {
     console.log('Bye! Thanks for playing!');
   }
+
 });
 }
-// ===========================================
-function readCards(logFile){
-  cardArray = [];
-
-  //grab created cards and saves them to an array
-  fs.readFile(logFile, 'utf8', function(err, data){
-
-    var data = JSON.parse(data);
-    for (var i = 0; i < data.length; i++) {
-      cardArray.push(data[i]);
-    }
-  });
-};
 
 function createCards(promptType, logFile){
   inquirer.prompt(promptType).then(function(answers) {
@@ -54,7 +42,6 @@ function createCards(promptType, logFile){
     }
   });
 };
-// ====checked up to this point
 
 function writeToLog(logFile, info){
 
@@ -64,7 +51,6 @@ function writeToLog(logFile, info){
     }
   });
 };
-
 
 var basicPrompt = [
 {
@@ -84,15 +70,13 @@ var basicPrompt = [
 
 var clozePrompt = [{
   name: 'text',
-  message: "Enter a sentence and put the word you want to hide in parentheses, like so: 'Haters gonna (hate)'",
-  validate: function(value) {
-    var parentheses = /\(\w.+\)/;
-    if (value.search(parentheses) > -1) {
-      return true;
-  }
-    return "Please put a word in parentheses in your sentence"
-}
-}, {
+  message: "Enter a full sentence: "
+},
+{
+  name: 'cloze',
+  message: "Enter cloze word or key words: "
+},
+{
   type: 'confirm',
   name: 'makeCard',
   message: "Do you want to create another card (enter for YES)?",
@@ -106,7 +90,3 @@ var makeCard = {
   default: true
 }
 flashcards();
-// =================================
-// var sun = new Simple("Is the sun a star or a planet?", "star");
-// console.log(sun.front);
-// console.log(sun.back);

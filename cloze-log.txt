@@ -1,0 +1,1 @@
+[{"front":"Which 13th century European explorer went to China and served its ruler for many years?","back":"Marco Polo","makeCard":false},{"text":"To err is human; to forgive, divine","cloze":"divine","makeCard":false}]
