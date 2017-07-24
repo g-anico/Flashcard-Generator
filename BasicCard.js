@@ -15,7 +15,7 @@ Simple.prototype.showFront = function(){
 
 //prints answer
 Simple.prototype.showBack = function(){
-  console.log('The correct answer is ' + this.back '.');
+  console.log('The correct answer is ' + this.back + '.');
 }
 // var card = new Simple ('What is the color of polar bear skin underneath its fur?', 'black');
 // var card2 = new Simple('The breed of dog featured in the movie, Beethoven is', 'Saint Bernard');
