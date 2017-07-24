@@ -1,1 +1,1 @@
-[{"front":"Which 13th century European explorer went to China and served its ruler for many years?","back":"Marco Polo","makeCard":false}]
+[{"text":"Neil Armstrong was the first person to walk on the moon","cloze":"Neil Armstrong","makeCard":true},{"text":"A polar bear has black skin underneath its fur","cloze":"black","makeCard":false},{"front":"Which planet is famous for the rings that surround it?","back":"Saturn","makeCard":false}]
