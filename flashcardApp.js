@@ -64,44 +64,7 @@ function writeToLog(logFile, info){
     }
   });
 };
-// =========checked up to this point======================
 
-// function createBasic(){
-//   inquirer.prompt([
-//     {
-//       name: 'front',
-//       message: "Enter front of card: "
-//     },
-//     {
-//       name: 'back',
-//       message: "Enter back of card: "
-//     }
-//   ])
-//   .then(function(answers){
-//     var card = new SimpleCard(answers.front, answers.back);
-//     appendToLog(answers.front);
-//     appendToLog(answers.back + "\n");
-//     createAnotherCard();
-//   });
-// };
-//
-// function createCloze(){
-//   inquirer.prompt([
-//     {
-//       name: 'front',
-//       message:
-//     }
-//   ])
-// }
-//
-// function appendToLog(info) {
-//   var logTxt = 'log.txt';
-//     fs.appendFile(logTxt, info, function(err){
-//       if(err){
-//         console.error(err);
-//       }
-//     });
-// }
 
 var basicPrompt = [
 {
@@ -144,3 +107,6 @@ var makeCard = {
 }
 flashcards();
 // =================================
+// var sun = new Simple("Is the sun a star or a planet?", "star");
+// console.log(sun.front);
+// console.log(sun.back);
