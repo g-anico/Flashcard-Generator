@@ -3,12 +3,12 @@ var Simple = function (front, back) {
   this.front = front;
   this.back = back;
 }
-
+//may not end up using below functions
 Simple.prototype.showCard = function(){
   console.log('Front: ' + this.front + ', ' + 'Back: ' + this.back);
 
 };
-//prints question
+
 Simple.prototype.showFront = function(){
   console.log(this.front);
 }

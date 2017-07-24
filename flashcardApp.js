@@ -17,16 +17,17 @@ function flashcards (){
 ])
 .then(function(choice){
   if(choice.userType === 'create-basic') {
-    // readCards('log.txt');
 
-    createCards(basicPrompt,'log.txt');
+     createCards(basicPrompt,'log.txt');
+
   } else if (choice.userType === 'create-cloze') {
-    // readCards('cloze-log.txt');
+
     createCards(clozePrompt, 'cloze-log.txt');
+
   } else if (choice.userType === 'quit') {
+
     console.log('Bye! Thanks for playing!');
   }
-
 });
 }
 
